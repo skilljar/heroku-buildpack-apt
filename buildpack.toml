@@ -1,0 +1,12 @@
+# Buildpack API version
+api = "0.2"
+
+# Buildpack ID and metadata
+[buildpack]
+id = "com.skilljar.heroku.apt"
+version = "0.0.1"
+name = "Skilljar Heroku Apt Buildpack"
+
+# Stacks that the buildpack will work with
+[[stacks]]
+id = "heroku-18"
