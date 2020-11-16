@@ -2,6 +2,8 @@
 # bin/detect <build-dir>
 
 echo "$1"
+pwd
+ls
 
 if [ -f $1/Aptfile ]; then
   echo "Apt" && exit 0
