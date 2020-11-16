@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-echo "$1"
-pwd
-ls
+echo "$1" # /platform
+#pwd # /workspace
 
-if [ -f $1/Aptfile ]; then
+# $1/Aptfile
+if [ -f Aptfile ]; then
   echo "Apt" && exit 0
 else
   echo "no" && exit 1
