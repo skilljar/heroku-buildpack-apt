@@ -11,9 +11,10 @@ set -e
 
 # parse and derive params
 LAYERS_DIR=$1
-BUILD_DIR=$2
+BUILD_DIR=`pwd`
 echo $1 # /layers/com.skilljar.heroku.apt
 echo $2 # /platform
+
 
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
