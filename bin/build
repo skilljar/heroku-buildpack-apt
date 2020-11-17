@@ -19,6 +19,7 @@ echo $2 # /platform, default PLATFORM_DIR
 
 
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
+echo $LP_DIR
 
 function error() {
   echo " !     $*" >&2
