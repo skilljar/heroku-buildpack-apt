@@ -12,7 +12,7 @@ set -e
 # parse and derive params
 LAYERS_DIR=$1
 BUILD_DIR=`pwd`
-PLATFORM_DIR=$2
+PLATFORM_DIR=/app
 
 echo $1 # /layers/com.skilljar.heroku.apt
 echo $2 # /platform, default PLATFORM_DIR
