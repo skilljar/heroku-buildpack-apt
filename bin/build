@@ -18,8 +18,8 @@ echo $1 # /layers/com.skilljar.heroku.apt
 echo $2 # /platform, default PLATFORM_DIR
 
 
-LP_DIR=`cd $(dirname $0); cd ..; pwd`
-echo $LP_DIR
+#LP_DIR=`cd $(dirname $0); cd ..; pwd`
+#echo $LP_DIR
 
 function error() {
   echo " !     $*" >&2
@@ -128,7 +128,7 @@ export CPPPATH="$INCLUDE_PATH"
 export PKG_CONFIG_PATH="$PLATFORM_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$PLATFORM_DIR/.apt/usr/lib/i386-linux-gnu/pkgconfig:$PLATFORM_DIR/.apt/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 #give environment to later buildpacks
-export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$LP_DIR/export"
+export | grep -E -e ' (PATH|LD_LIBRARY_PATH|LIBRARY_PATH|INCLUDE_PATH|CPATH|CPPPATH|PKG_CONFIG_PATH)='  > "$PLATFORM_DIR/export"
 
 topic "Rewrite package-config files"
 find $PLATFORM_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='"$BUILD_DIR"'/.apt\1!g'
