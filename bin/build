@@ -109,7 +109,7 @@ done
 
 #mkdir -p $LAYERS_DIR/.apt
 
-for DEB in $(ls -1 $LAYERS_DIR/archives/*.deb); do
+for DEB in $(ls -1 $APT_LAYERS_DIR/archives/*.deb); do
   topic "Installing $(basename $DEB)"
   dpkg -x $DEB $LAYERS_DIR/.apt/
 done
