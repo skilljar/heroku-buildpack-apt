@@ -118,7 +118,7 @@ topic "Writing profile script"
 mkdir -p $LAYERS_DIR/.profile.d
 
 # Look for packages in $HOME/.apt/usr/bin
-cat <<EOF >$PLATFORM_DIR/.profile.d/000_apt.sh
+cat <<EOF >$LAYERS_DIR/.profile.d/000_apt.sh
 export PATH="\$HOME/.apt/usr/bin:\$PATH"
 export LD_LIBRARY_PATH="\$HOME/.apt/usr/lib/x86_64-linux-gnu:\$HOME/.apt/usr/lib/i386-linux-gnu:\$HOME/.apt/usr/lib:\$LD_LIBRARY_PATH"
 export LIBRARY_PATH="\$HOME/.apt/usr/lib/x86_64-linux-gnu:\$HOME/.apt/usr/lib/i386-linux-gnu:\$HOME/.apt/usr/lib:\$LIBRARY_PATH"
