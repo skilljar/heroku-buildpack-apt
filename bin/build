@@ -21,7 +21,7 @@ echo $2         # /platform, default PLATFORM_DIR
 echo $3         # /tmp/plan.981659134/com.skilljar.heroku.apt/plan.toml
 
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
-echo $LP_DIR
+echo $LP_DIR    # /cnb/buildpacks/com.skilljar.heroku.apt/0.0.1
 
 function error() {
   echo " !     $*" >&2
@@ -119,7 +119,7 @@ topic "Writing profile script"
 mkdir -p $BUILD_DIR/.profile.d
 
 # Look for packages in $HOME/.apt/usr/bin
-cat <<EOF >$PLATFORM_DIR/.profile.d/000_apt.sh
+cat <<EOF >$BUILD_DIR/.profile.d/000_apt.sh
 export PATH="\$HOME/.apt/usr/bin:\$PATH"
 export LD_LIBRARY_PATH="\$HOME/.apt/usr/lib/x86_64-linux-gnu:\$HOME/.apt/usr/lib/i386-linux-gnu:\$HOME/.apt/usr/lib:\$LD_LIBRARY_PATH"
 export LIBRARY_PATH="\$HOME/.apt/usr/lib/x86_64-linux-gnu:\$HOME/.apt/usr/lib/i386-linux-gnu:\$HOME/.apt/usr/lib:\$LIBRARY_PATH"
